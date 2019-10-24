@@ -21,7 +21,6 @@ public class OrderRecyclerAdapter extends RecyclerView.Adapter <OrderRecyclerAda
         public TextView orderTotalPrice;
         public TextView orderAmount;
 
-
         public ImageView orderImage;
 
 
@@ -50,10 +49,15 @@ public class OrderRecyclerAdapter extends RecyclerView.Adapter <OrderRecyclerAda
 
     @Override
     public void onBindViewHolder(@NonNull OrderViewHolder holder, int position) {
+
         holder.orderName.setText(orderArrayList.get(position).getOrderName());
-        holder.orderTotalPrice.setText(String.valueOf(orderArrayList.get(position).getOrderCost()));
+
+        holder.orderTotalPrice.setText("$" + String.valueOf(orderArrayList.get(position).getOrderCost()));
+
         holder.orderAmount.setText(String.valueOf(orderArrayList.get(position).getOrderSize()));
+
         holder.orderImage.setImageResource(imageList[orderArrayList.get(position).getItemPosition()]);
+
 
     }
 

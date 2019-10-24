@@ -4,5 +4,6 @@
     <string name="dollars">$</string>
     <string name="equals">=</string>
     <string name="unitcost">Each one costs    </string>
-    <string name="total">Total</string>
+    <string name="total">Total:</string>
+    <string name="orderconfirm">Your order has been added!</string>
 </resources>

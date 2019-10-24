@@ -16,7 +16,6 @@ public class OrderActivity extends AppCompatActivity {
     private RecyclerView.LayoutManager orderLayoutManager;
     private RecyclerView.Adapter orderAdapter;
 
-    private int itemPosition;
     private int totalCost;
 
     private int[] imageList;
@@ -37,14 +36,12 @@ public class OrderActivity extends AppCompatActivity {
         imageList = orderIntent.getIntArrayExtra("Image List");
 
         orderList = ItemDetailActivity.orderArrayList;
+        // getting The Total Price of all orders from the TotalPrice variable set in ItemDetailActivity.java
         totalCost = ItemDetailActivity.getTotalPrice();
 
         TextView totalPrice = findViewById(R.id.totalPriceText);
 
-
-        totalPrice.setText(String.valueOf(totalCost));
-
-
+        totalPrice.setText("$" + String.valueOf(totalCost));
 
         RecyclerView orderRecycleView = findViewById(R.id.orderRecyclerView);
 

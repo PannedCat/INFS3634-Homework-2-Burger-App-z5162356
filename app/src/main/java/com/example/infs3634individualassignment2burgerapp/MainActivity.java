@@ -22,12 +22,11 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<Product> productArrayList = new ArrayList<>();
     private ArrayList<Order> orderList = new ArrayList<>();
 
+    // Creating an array of Images that will be passed between activities through intents
     private int[] imageList = new int[]{R.drawable.doublecheeseburger, R.drawable.fries, R.drawable.csalad,
             R.drawable.soda, R.drawable.refriedbeans, R.drawable.tbone, R.drawable.chocolatesundae, R.drawable.bratwurst,
-    R.drawable.pineapplepie, R.drawable.chocopie, R.drawable.ginger, R.drawable.pancakes, R.drawable.water, R.drawable.clownhat,
-    R.drawable.toffee};
-
-    private String orderName;
+            R.drawable.pineapplepie, R.drawable.chocopie, R.drawable.ginger, R.drawable.pancakes, R.drawable.water, R.drawable.clownhat,
+            R.drawable.toffee};
 
     private ActionBar toolbar;
 
@@ -53,11 +52,6 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                orderList = ItemDetailActivity.orderArrayList;
-                orderName = orderList.get(0).getOrderName();
-                Toast toast = Toast.makeText(v.getContext(), orderName, Toast.LENGTH_SHORT);
-                toast.show();
-
                 Intent viewOrderIntent = new Intent(v.getContext(), OrderActivity.class);
                 viewOrderIntent.putExtra("Image List", imageList);
                 v.getContext().startActivity(viewOrderIntent);

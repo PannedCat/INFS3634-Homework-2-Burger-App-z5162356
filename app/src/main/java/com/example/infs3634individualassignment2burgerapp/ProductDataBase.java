@@ -5,6 +5,8 @@ import android.os.ProxyFileDescriptorCallback;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
+// This class is used to provide access to a method of initialising the arrayList that contains the Product Objects
+// The arrayList will then be used to feed multiple recyclerViews defined in other classes of this package
 public class ProductDataBase {
 
 

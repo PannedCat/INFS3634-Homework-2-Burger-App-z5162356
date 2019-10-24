@@ -36,29 +36,28 @@ public class ProductRecyclerAdapter extends RecyclerView.Adapter <ProductRecycle
 
             itemLayout = v.findViewById(R.id.productLayout);
 
-
-
         }
     }
 
     public ProductRecyclerAdapter(ArrayList products, int[]images) {
         productArrayList = products;
         imageList = images;
-
     }
 
 
 
     @Override
     public ProductViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.chunk, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.productlayout, parent, false);
         ProductViewHolder productViewHolder = new ProductViewHolder(view);
         return productViewHolder;
     }
 
     @Override
     public void onBindViewHolder(@NonNull final ProductViewHolder holder, final int position) {
+
         holder.itemName.setText(productArrayList.get(position).getName());
+
         holder.itemImage.setImageResource(imageList[position]);
 
         holder.itemLayout.setOnClickListener(new View.OnClickListener() {
